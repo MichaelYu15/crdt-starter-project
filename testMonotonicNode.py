@@ -4,6 +4,7 @@ import random
 import numpy as np
 
 class TestStringMethods(unittest.TestCase):
+    # Default test that makes sure merges result in the same value across different orderings
     def test_consistency(self):
         # Seeded to replicate results
         random.seed(100000)
@@ -25,6 +26,7 @@ class TestStringMethods(unittest.TestCase):
         self.assertTrue(network1.node_map[central_node_id].isSubsetOf(network2.node_map[central_node_id]))
         self.assertTrue(network2.node_map[central_node_id].isSubsetOf(network1.node_map[central_node_id]))
 
+    # Expands onto first test, except with added duplicate operations
     def test_duplicates(self):
         random.seed(100000)
         n = 10
